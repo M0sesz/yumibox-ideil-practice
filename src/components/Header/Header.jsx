@@ -1,17 +1,45 @@
+import React, { useState } from "react";
+
 import {
   TextMenu,
   Wrapper,
   ButtonMenu,
   HeaderWrapper,
   MenuButton,
+  Modal,
+  ModalContent,
+  CloseButton,
+  LogoHeader,
+  HeaderMobileNav,
+  HeaderNavList,
+  HeaderNavLink,
+  HeaderEmail,
+  HeaderPhone,
+  ListSocial,
+  ListAddress,
 } from "./Header.styled";
+
 import { IoMdMenu } from "react-icons/io";
+import { IoClose } from "react-icons/io5";
+import { ImLinkedin2 } from "react-icons/im";
+import { FaInstagram } from "react-icons/fa6";
+import { FaFacebookF } from "react-icons/fa";
 
 export const Header = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <Wrapper>
       <HeaderWrapper>
-        <svg
+        <LogoHeader
           width="75"
           height="48"
           viewBox="0 0 114 73"
@@ -32,14 +60,66 @@ export const Header = () => {
             d="M47.2308 42.6378V28.724H50.3285V29.9809C50.6511 29.3818 51.1865 28.9221 51.8313 28.6906C52.5303 28.4123 53.277 28.27 54.0304 28.2716C54.7707 28.266 55.5034 28.4204 56.1773 28.724C56.818 28.9998 57.3773 29.4323 57.8028 29.9809C57.9355 30.1181 58.0546 30.2675 58.1586 30.4272C58.2386 30.251 58.362 30.0976 58.5174 29.9809C58.9959 29.4141 59.6123 28.9774 60.3086 28.7119C61.0443 28.4177 61.8308 28.2682 62.6242 28.2716C64.4501 28.2716 65.8691 28.8424 66.8812 29.9839C67.4506 30.5636 67.8595 31.2788 68.0682 32.0605C68.2747 32.9565 68.3715 33.8739 68.3565 34.7929V42.6287H64.9582V35.2179C64.9582 33.9124 64.7865 33.0199 64.4491 32.5523C64.244 32.2256 63.9434 31.9684 63.5872 31.8146C63.2027 31.6388 62.784 31.5486 62.3604 31.5505C61.897 31.5236 61.435 31.6225 61.0242 31.8365C60.6134 32.0505 60.2695 32.3715 60.0295 32.7649C59.6246 33.372 59.4161 34.3253 59.4161 35.6278C59.4181 35.7022 59.4263 35.7763 59.4406 35.8494C59.4547 35.9103 59.4639 35.9722 59.4682 36.0346V42.6651H56.1252V35.2179C56.1316 34.7296 56.1019 34.2416 56.0362 33.7576C55.9648 33.3602 55.8045 32.9837 55.5669 32.6556C55.3427 32.3049 55.024 32.0232 54.6468 31.8419C54.257 31.643 53.8249 31.539 53.3863 31.5383C52.5684 31.5383 51.955 31.7579 51.5461 32.1971C51.1421 32.635 50.8803 33.1829 50.7946 33.7698C50.6887 34.5118 50.6405 35.2609 50.6505 36.0103V42.6408L47.2308 42.6378ZM42.2407 28.724H45.639V42.6378H42.5443V41.1198C41.8082 42.4253 40.5906 43.078 38.8915 43.078C38.0542 43.0955 37.2235 42.9283 36.4596 42.5885C35.6957 42.2488 35.0178 41.745 34.475 41.1137C34.0978 40.7323 33.7943 40.2857 33.5794 39.7961C33.3802 39.3354 33.249 38.8487 33.1899 38.351C33.1284 37.7519 33.0997 37.1499 33.104 36.5477V28.724H36.5053V35.5549C36.5053 36.8998 36.6403 37.8379 36.9163 38.3723C37.1369 38.8156 37.4819 39.1866 37.91 39.4409C38.3442 39.696 38.8406 39.8283 39.3454 39.8235C40.4843 39.8235 41.25 39.4237 41.6426 38.6243C42.0747 37.6593 42.2792 36.6097 42.2407 35.5549V28.724ZM19.7409 47.3101L22.3295 41.3323L17.1738 28.724H21.026L24.228 37.6133L27.6263 28.724H31.4386L23.3662 47.3101H19.7409Z"
             fill="#FCB852"
           />
-        </svg>
+        </LogoHeader>
         <MenuButton>
           <TextMenu>Меню</TextMenu>
-          <ButtonMenu>
+          <ButtonMenu onClick={handleOpenModal}>
             <IoMdMenu color="white" size="30px" />
           </ButtonMenu>
         </MenuButton>
       </HeaderWrapper>
+      {isModalOpen && (
+        <Modal>
+          <ModalContent>
+            <CloseButton onClick={handleCloseModal}>
+              <IoClose size="30px" color="white" />
+            </CloseButton>
+            <div>
+              <HeaderMobileNav>
+                <ul>
+                  <HeaderNavList>
+                    <HeaderNavLink href="#">Каталог</HeaderNavLink>
+                  </HeaderNavList>
+                  <HeaderNavList>
+                    <HeaderNavLink href="#">Кейтеринг</HeaderNavLink>
+                  </HeaderNavList>
+                  <HeaderNavList>
+                    <HeaderNavLink href="#">Про нас</HeaderNavLink>
+                  </HeaderNavList>
+                  <HeaderNavList>
+                    <HeaderNavLink href="#">Контакти</HeaderNavLink>
+                  </HeaderNavList>
+                </ul>
+              </HeaderMobileNav>
+              <ul>
+                <address>
+                  <ListAddress>
+                    <HeaderEmail href="mailto:yumbox.lutsk@gmail.com">
+                      yumbox.lutsk@gmail.com
+                    </HeaderEmail>
+                  </ListAddress>
+                  <li>
+                    <HeaderPhone href="tel:+380938239293">
+                      +380 93 823 92 93
+                    </HeaderPhone>
+                  </li>
+                </address>
+              </ul>
+              <ListSocial>
+                <li>
+                  <ImLinkedin2 color="white" size={24} />
+                </li>
+                <li>
+                  <FaInstagram color="white" size={24} />
+                </li>
+                <li>
+                  <FaFacebookF color="white" size={24} />
+                </li>
+              </ListSocial>
+            </div>
+          </ModalContent>
+        </Modal>
+      )}
     </Wrapper>
   );
 };
