@@ -17,6 +17,7 @@ import {
   HeaderPhone,
   ListSocial,
   ListAddress,
+  UlAddress,
 } from "./Header.styled";
 
 import { IoMdMenu } from "react-icons/io";
@@ -91,7 +92,7 @@ export const Header = () => {
                   </HeaderNavList>
                 </ul>
               </HeaderMobileNav>
-              <ul>
+              <UlAddress>
                 <address>
                   <ListAddress>
                     <HeaderEmail href="mailto:yumbox.lutsk@gmail.com">
@@ -104,7 +105,7 @@ export const Header = () => {
                     </HeaderPhone>
                   </li>
                 </address>
-              </ul>
+              </UlAddress>
               <ListSocial>
                 <li>
                   <ImLinkedin2 color="white" size={24} />

@@ -54,8 +54,6 @@ export const Modal = styled.div`
 
 export const ModalContent = styled.div`
   background-color: black;
-  padding: 20px;
-  border-radius: 8px;
   position: fixed;
   top: 0;
   left: 0;
@@ -79,8 +77,8 @@ export const CloseButton = styled.button`
 export const HeaderMobileNav = styled.nav`
   display: flex;
   flex-direction: column;
-  padding-right: 170px;
-  padding-bottom: 32px;
+  padding-right: 66px;
+  margin-bottom: 22px;
 `;
 
 export const HeaderNavList = styled.li`
@@ -88,6 +86,10 @@ export const HeaderNavList = styled.li`
   font-size: 36px;
   line-height: 40px;
   letter-spacing: 0.02em;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
 `;
 
 export const HeaderNavLink = styled.a`
@@ -100,8 +102,7 @@ export const HeaderNavLink = styled.a`
 export const ListSocial = styled.ul`
   display: flex;
   gap: 44px;
-  padding-top: 75px;
-  margin-bottom: 0;
+  margin: 0;
 `;
 export const ListAddress = styled.li`
   padding-bottom: 10px;
@@ -111,6 +112,7 @@ export const HeaderEmail = styled.a`
   color: #f3ba4f;
   font-weight: 600;
   font-size: 18px;
+  font-style: normal;
 `;
 
 export const HeaderPhone = styled.a`
@@ -118,4 +120,10 @@ export const HeaderPhone = styled.a`
   color: white;
   font-weight: 600;
   font-size: 18px;
+  font-style: normal;
+`;
+
+export const UlAddress = styled.ul`
+  margin: 0;
+  padding-bottom: 75px;
 `;
