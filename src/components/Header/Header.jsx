@@ -18,6 +18,12 @@ import {
   ListSocial,
   ListAddress,
   UlAddress,
+  HeaderMobileNavUl,
+  HeaderDesktopNav,
+  HeaderDesktopNavUl,
+  HeaderNavListDesktop,
+  HeaderNavLinkDesktop,
+  BasketDesk,
 } from "./Header.styled";
 
 import { IoMdMenu } from "react-icons/io";
@@ -68,6 +74,23 @@ export const Header = () => {
             <IoMdMenu color="white" size="30px" />
           </ButtonMenu>
         </MenuButton>
+        <HeaderDesktopNav>
+          <HeaderDesktopNavUl>
+            <HeaderNavListDesktop>
+              <HeaderNavLinkDesktop href="#">Каталог</HeaderNavLinkDesktop>
+            </HeaderNavListDesktop>
+            <HeaderNavListDesktop>
+              <HeaderNavLinkDesktop href="#">Кейтеринг</HeaderNavLinkDesktop>
+            </HeaderNavListDesktop>
+            <HeaderNavListDesktop>
+              <HeaderNavLinkDesktop href="#">Про нас</HeaderNavLinkDesktop>
+            </HeaderNavListDesktop>
+            <HeaderNavListDesktop>
+              <HeaderNavLinkDesktop href="#">Контакти</HeaderNavLinkDesktop>
+            </HeaderNavListDesktop>
+          </HeaderDesktopNavUl>
+        </HeaderDesktopNav>
+        <BasketDesk>11111111111111111</BasketDesk>
       </HeaderWrapper>
       {isModalOpen && (
         <Modal>
@@ -77,7 +100,7 @@ export const Header = () => {
             </CloseButton>
             <div>
               <HeaderMobileNav>
-                <ul>
+                <HeaderMobileNavUl>
                   <HeaderNavList>
                     <HeaderNavLink href="#">Каталог</HeaderNavLink>
                   </HeaderNavList>
@@ -90,8 +113,9 @@ export const Header = () => {
                   <HeaderNavList>
                     <HeaderNavLink href="#">Контакти</HeaderNavLink>
                   </HeaderNavList>
-                </ul>
+                </HeaderMobileNavUl>
               </HeaderMobileNav>
+
               <UlAddress>
                 <address>
                   <ListAddress>

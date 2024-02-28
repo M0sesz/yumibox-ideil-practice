@@ -3,6 +3,16 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   padding-top: 20px;
   margin: 0 20px;
+
+  @media (min-width: 768px) {
+    padding-top: 25px;
+    margin: 0 30px;
+  }
+
+  @media (min-width: 1110px) {
+    padding-top: 32px;
+    margin: 0 82px;
+  }
 `;
 
 export const HeaderWrapper = styled.header`
@@ -21,15 +31,30 @@ export const TextMenu = styled.p`
   line-height: 16px;
   color: white;
   z-index: 10;
+
+  @media (min-width: 800px) {
+    display: none;
+  }
 `;
 
 export const MenuButton = styled.div`
   display: flex;
   align-items: center;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 export const LogoHeader = styled.svg`
   z-index: 10;
+  width: 75px;
+  height: auto;
+
+  @media (min-width: 1120px) {
+    width: 114px;
+  }
 `;
+
 export const ButtonMenu = styled.button`
   padding-top: 10px;
   background: none;
@@ -38,6 +63,10 @@ export const ButtonMenu = styled.button`
   margin: 0;
   outline: none;
   cursor: pointer;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 export const Modal = styled.div`
@@ -60,7 +89,7 @@ export const ModalContent = styled.div`
   right: 0;
   bottom: 0;
   display: flex;
-  justify-content: center;
+  padding-left: 20px;
   align-items: center;
 `;
 
@@ -75,8 +104,6 @@ export const CloseButton = styled.button`
 `;
 
 export const HeaderMobileNav = styled.nav`
-  display: flex;
-  flex-direction: column;
   padding-right: 66px;
   margin-bottom: 22px;
 `;
@@ -98,6 +125,10 @@ export const HeaderNavLink = styled.a`
   font-weight: 500;
   font-size: 24px;
   line-height: 39px;
+
+  @media (min-width: 1110px) {
+    font-weight: 500;
+  }
 `;
 export const ListSocial = styled.ul`
   display: flex;
@@ -126,4 +157,43 @@ export const HeaderPhone = styled.a`
 export const UlAddress = styled.ul`
   margin: 0;
   padding-bottom: 75px;
+`;
+export const HeaderMobileNavUl = styled.ul`
+  margin: 0;
+`;
+
+export const HeaderDesktopNav = styled.nav`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+export const HeaderDesktopNavUl = styled.ul`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+`;
+export const HeaderNavListDesktop = styled.li``;
+
+export const HeaderNavLinkDesktop = styled.a`
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  line-height: 19px;
+  font-size: 15px;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #fcb852;
+  }
+`;
+
+export const BasketDesk = styled.button`
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
