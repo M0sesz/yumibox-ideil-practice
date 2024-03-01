@@ -24,6 +24,7 @@ import {
   HeaderNavListDesktop,
   HeaderNavLinkDesktop,
   BasketDesk,
+  HeaderBasketWrapper,
 } from "./Header.styled";
 
 import { IoMdMenu } from "react-icons/io";
@@ -54,8 +55,8 @@ export const Header = () => {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M0 0H73.1549V19.7565H69.956V3.16651H3.19892V69.2472H69.954L69.9284 48.2023L73.1273 48.1985L73.1568 72.4137H0V0Z"
             fill="white"
           />
@@ -90,7 +91,9 @@ export const Header = () => {
             </HeaderNavListDesktop>
           </HeaderDesktopNavUl>
         </HeaderDesktopNav>
-        <BasketDesk>11111111111111111</BasketDesk>
+        <HeaderBasketWrapper>
+          <BasketDesk>2 568грн</BasketDesk>
+        </HeaderBasketWrapper>
       </HeaderWrapper>
       {isModalOpen && (
         <Modal>

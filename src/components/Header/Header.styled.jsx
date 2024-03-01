@@ -30,7 +30,7 @@ export const TextMenu = styled.p`
   letter-spacing: 1px;
   line-height: 16px;
   color: white;
-  z-index: 10;
+  z-index: 11;
 
   @media (min-width: 800px) {
     display: none;
@@ -46,7 +46,7 @@ export const MenuButton = styled.div`
   }
 `;
 export const LogoHeader = styled.svg`
-  z-index: 10;
+  z-index: 11;
   width: 75px;
   height: auto;
 
@@ -79,6 +79,10 @@ export const Modal = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10;
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 export const ModalContent = styled.div`
@@ -89,7 +93,7 @@ export const ModalContent = styled.div`
   right: 0;
   bottom: 0;
   display: flex;
-  padding-left: 20px;
+  padding-left: 50px;
   align-items: center;
 `;
 
@@ -175,7 +179,7 @@ export const HeaderDesktopNavUl = styled.ul`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 30px;
 `;
 export const HeaderNavListDesktop = styled.li``;
 
@@ -193,6 +197,23 @@ export const HeaderNavLinkDesktop = styled.a`
 `;
 
 export const BasketDesk = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+export const HeaderBasketWrapper = styled.div`
+  border: 2px solid white;
+  border-radius: 21px;
+  color: white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+
   @media (max-width: 768px) {
     display: none;
   }

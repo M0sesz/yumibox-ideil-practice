@@ -1,3 +1,4 @@
+@import "swiper/css/pagination";
 body {
   background-color: black;
   margin: 0;
@@ -5,4 +6,115 @@ body {
 }
 li {
   list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.button-next-slide {
+  z-index: 1;
+  color: white;
+  border: 3px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+}
+
+.button-prev-slide {
+  z-index: 1;
+  color: white;
+  border: 3px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33px;
+  height: 33px;
+  position: absolute;
+}
+
+@media (max-width: 768px) {
+  .button-next-slide {
+    position: absolute;
+    top: calc(100% - 200px);
+    right: 25px;
+  }
+
+  .button-prev-slide {
+    position: absolute;
+    top: calc(100% - 200px);
+    left: 25px;
+  }
+}
+
+@media (min-width: 767px) {
+  .button-next-slide {
+    position: absolute;
+    top: calc(100% - 380px);
+    right: 40px;
+  }
+
+  .button-prev-slide {
+    position: absolute;
+    top: calc(100% - 380px);
+    left: 40px;
+  }
+}
+@media (min-width: 1110px) {
+  .button-next-slide {
+    position: absolute;
+    top: calc(100% - 360px);
+    right: 100px;
+  }
+
+  .button-prev-slide {
+    position: absolute;
+    top: calc(100% - 360px);
+    left: 100px;
+  }
+}
+
+.pagination-wrap {
+  position: relative;
+  margin-top: 40px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.swiper-pagination-bullet {
+  background-color: white !important;
+}
+.swiper-pagination-bullet-active {
+  background-color: #fcb852 !important;
 }
