@@ -45,7 +45,7 @@ export const Hero = () => {
               BOX
             </TextHero>
             <HeroTextWrap>
-              <HeroText2>сет 21</HeroText2>
+              <HeroText2>Cет 21</HeroText2>
               <HeroButton type="button">934 грн</HeroButton>
             </HeroTextWrap>
           </HeroBox>
