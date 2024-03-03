@@ -8,7 +8,7 @@ import "swiper/css/scrollbar";
 export const HeroBox = styled.div`
   position: relative;
   background-color: #222222;
-  max-width: 1270px;
+  max-width: 100%;
   border-radius: 20px;
   display: flex;
   align-items: center;

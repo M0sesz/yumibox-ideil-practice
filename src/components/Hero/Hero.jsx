@@ -25,7 +25,6 @@ export const Hero = () => {
         modules={[Navigation, Pagination]}
         slidesPerView={1}
         spaceBetween={20}
-        loop={true}
         navigation={{
           nextEl: ".button-next-slide",
           prevEl: ".button-prev-slide",
