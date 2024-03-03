@@ -55,54 +55,50 @@ img {
 @media (max-width: 768px) {
   .button-next-slide {
     position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-90%);
+    top: calc(100% - 200px);
+    right: 25px;
   }
 
   .button-prev-slide {
     position: absolute;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-100%);
+    top: calc(100% - 200px);
+    left: 25px;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .button-next-slide {
     position: absolute;
-    top: 50%;
-    right: 30px;
-    transform: translateY(-100%);
+    top: calc(100% - 380px);
+    right: 40px;
   }
 
   .button-prev-slide {
-    left: 5px;
-    bottom: -10px;
+    position: absolute;
+    top: calc(100% - 380px);
+    left: 40px;
   }
 }
 @media (min-width: 1110px) {
   .button-next-slide {
-    margin-top: 10px;
-    top: 51%;
-    right: 88px;
-    bottom: 20px;
-    transform: translateY(-50%);
+    position: absolute;
+    top: calc(100% - 360px);
+    right: 100px;
+  }
+
+  .button-prev-slide {
+    position: absolute;
+    top: calc(100% - 360px);
+    left: 100px;
   }
 }
 
 .pagination-wrap {
   position: relative;
-  margin-top: 45px;
+  margin-top: 40px;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-}
-
-@media (min-width: 768px) {
-  .pagination-wrap {
-    margin-top: -5px;
-  }
 }
 .swiper-pagination-bullet {
   background-color: white !important;
