@@ -168,7 +168,6 @@ export const HeaderMobileNavUl = styled.ul`
 
 export const HeaderDesktopNav = styled.nav`
   display: none;
-
   @media (min-width: 768px) {
     display: flex;
     align-items: center;
@@ -203,6 +202,7 @@ export const BasketDesk = styled.button`
   color: white;
   font-weight: 700;
   font-size: 13px;
+
   @media (max-width: 768px) {
     display: none;
   }
