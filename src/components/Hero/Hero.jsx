@@ -9,6 +9,7 @@ import {
   HeroText2,
   HeroButton,
   HeroImage,
+  YumBoxImg,
 } from "./Hero.styled";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -17,6 +18,7 @@ import { Wrapper } from "../Header/Header.styled";
 
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import hero from "../../assets/hero.png";
+import yumbox from "../../assets/yumbox.png";
 
 export const Hero = () => {
   return (
@@ -25,6 +27,7 @@ export const Hero = () => {
         modules={[Navigation, Pagination]}
         slidesPerView={1}
         spaceBetween={20}
+        loop={true}
         navigation={{
           nextEl: ".button-next-slide",
           prevEl: ".button-prev-slide",
@@ -38,6 +41,7 @@ export const Hero = () => {
       >
         <SwiperSlide>
           <HeroBox>
+            <YumBoxImg src={yumbox} alt="" />
             <HeroImage src={hero} />
             <TextHero>
               YUM
@@ -52,6 +56,7 @@ export const Hero = () => {
         </SwiperSlide>
         <SwiperSlide>
           <HeroBox>
+            <YumBoxImg src={yumbox} alt="" />
             <HeroImage src={hero} />
             <TextHero>
               YUM
@@ -66,6 +71,7 @@ export const Hero = () => {
         </SwiperSlide>
         <SwiperSlide>
           <HeroBox>
+            <YumBoxImg src={yumbox} alt="" />
             <HeroImage src={hero} />
             <TextHero>
               YUM

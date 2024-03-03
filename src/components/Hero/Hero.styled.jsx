@@ -19,9 +19,13 @@ export const HeroBox = styled.div`
 
 export const TextHero = styled.p`
   color: rgb(233, 229, 225);
-  font-weight: 700;
-  font-size: 110px;
+  font-weight: 600;
+  font-size: 130px;
   text-align: center;
+
+  @media (min-width: 1100px) {
+    display: none;
+  }
 `;
 
 export const CustomSwiper = styled(Swiper)`
@@ -38,6 +42,7 @@ export const HeroTextWrap = styled.div`
   align-items: center;
   justify-content: center;
   padding-bottom: 20px;
+  z-index: 1;
 `;
 
 export const HeroText2 = styled.p`
@@ -62,8 +67,21 @@ export const HeroButton = styled.button`
 
 export const HeroImage = styled.img`
   position: absolute;
-  top: 0;
+  top: 30px;
   z-index: 1;
-  width: 310px;
-  height: 280px;
+  width: 350px;
+  height: 250px;
+
+  @media (min-width: 1100px) {
+    top: 30px;
+    width: 700px;
+    height: 500px;
+  }
+`;
+export const YumBoxImg = styled.img`
+  display: none;
+
+  @media (min-width: 1100px) {
+    display: block;
+  }
 `;

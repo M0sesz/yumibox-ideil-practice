@@ -4,12 +4,12 @@ export const Wrapper = styled.div`
   padding-top: 20px;
   margin: 0 20px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 768px) and (max-width: 1100px) {
     padding-top: 25px;
     margin: 0 30px;
   }
 
-  @media (min-width: 1110px) {
+  @media (min-width: 1100px) {
     padding-top: 32px;
     margin: 0 82px;
   }
