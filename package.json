@@ -1,7 +1,7 @@
 {
   "homepage": "https://M0sesz.github.io/yumibox-ideil-practice",
   "name": "yumibox",
-  "private": false,
+  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
