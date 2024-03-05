@@ -16,8 +16,6 @@ export const DishWrap = styled.div`
 `;
 
 export const DishImg = styled.img`
-  display: block;
-  height: auto;
   width: 250px;
   margin: auto;
   padding-bottom: 10px;

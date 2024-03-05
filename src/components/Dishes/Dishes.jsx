@@ -33,6 +33,18 @@ const setsData = [
     grams: "1500 гр",
     price: "799 грн",
   },
+  {
+    id: 5,
+    title: "Yumbox ",
+    grams: "1500 гр",
+    price: "799 грн",
+  },
+  {
+    id: 6,
+    title: "Yumbox ",
+    grams: "1500 гр",
+    price: "799 грн",
+  },
 ];
 
 export const Dishes = () => {
@@ -42,10 +54,15 @@ export const Dishes = () => {
       <Swiper
         modules={[Navigation, Pagination]}
         slidesPerView={1}
-        spaceBetween={10}
+        spaceBetween={2}
         loop={true}
         pagination={{
           el: ".pagination-wrap-dish",
+        }}
+        breakpoints={{
+          768: {
+            slidesPerView: 2,
+          },
         }}
       >
         {setsData.map((set) => (
