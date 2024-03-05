@@ -100,3 +100,9 @@ img {
 .swiper-pagination-bullet-active {
   background-color: #fcb852 !important;
 }
+.pagination-wrap-dish {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}

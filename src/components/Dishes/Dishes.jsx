@@ -43,13 +43,17 @@ export const Dishes = () => {
         modules={[Navigation, Pagination]}
         slidesPerView={1}
         spaceBetween={10}
-        pagination
+        loop={true}
+        pagination={{
+          el: ".pagination-wrap-dish",
+        }}
       >
         {setsData.map((set) => (
           <SwiperSlide key={set.id}>
             <DishesItem title={set.title} grams={set.grams} price={set.price} />
           </SwiperSlide>
         ))}
+        <div className="pagination-wrap-dish"></div>
       </Swiper>
     </>
   );
