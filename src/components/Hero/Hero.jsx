@@ -2,24 +2,14 @@ import { SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-import {
-  HeroBox,
-  TextHero,
-  CustomSwiper,
-  HeroTextWrap,
-  HeroText2,
-  HeroButton,
-  HeroImage,
-  YumBoxImg,
-} from "./Hero.styled";
+import { CustomSwiper } from "./Hero.styled";
 import { Wrapper } from "../Header/Header.styled";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import hero from "../../assets/hero.png";
-import yumbox from "../../assets/yumbox.png";
+import { HeroItem } from "./HeroItem";
 
 export const Hero = () => {
   return (
@@ -41,49 +31,13 @@ export const Hero = () => {
         }}
       >
         <SwiperSlide>
-          <HeroBox>
-            <YumBoxImg src={yumbox} alt="logo hero" />
-            <HeroImage src={hero} />
-            <TextHero>
-              YUM
-              <br />
-              BOX
-            </TextHero>
-            <HeroTextWrap>
-              <HeroText2>Cет 21</HeroText2>
-              <HeroButton type="button">934 грн</HeroButton>
-            </HeroTextWrap>
-          </HeroBox>
+          <HeroItem />
         </SwiperSlide>
         <SwiperSlide>
-          <HeroBox>
-            <YumBoxImg src={yumbox} alt="logo hero" />
-            <HeroImage src={hero} />
-            <TextHero>
-              YUM
-              <br />
-              BOX
-            </TextHero>
-            <HeroTextWrap>
-              <HeroText2>сет 21</HeroText2>
-              <HeroButton type="button">934 грн</HeroButton>
-            </HeroTextWrap>
-          </HeroBox>
+          <HeroItem />
         </SwiperSlide>
         <SwiperSlide>
-          <HeroBox>
-            <YumBoxImg src={yumbox} alt="logo hero" />
-            <HeroImage src={hero} />
-            <TextHero>
-              YUM
-              <br />
-              BOX
-            </TextHero>
-            <HeroTextWrap>
-              <HeroText2>сет 21</HeroText2>
-              <HeroButton type="button">934 грн</HeroButton>
-            </HeroTextWrap>
-          </HeroBox>
+          <HeroItem />
         </SwiperSlide>
       </CustomSwiper>
       <div className="button-next-slide">

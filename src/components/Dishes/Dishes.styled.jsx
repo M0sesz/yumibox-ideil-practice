@@ -20,6 +20,7 @@ export const DishImg = styled.img`
   margin: auto;
   padding-bottom: 10px;
 `;
+
 export const DishTextWrap = styled.div`
   display: flex;
   align-items: center;
@@ -27,6 +28,7 @@ export const DishTextWrap = styled.div`
   color: white;
   flex-direction: column;
 `;
+
 export const YumBoxText = styled.p`
   text-align: center;
   font-weight: 600;
@@ -34,15 +36,21 @@ export const YumBoxText = styled.p`
   line-height: 100%;
   padding-bottom: 10px;
 `;
+
 export const Grams = styled.p`
   color: grey;
   font-size: 13px;
   padding-bottom: 15px;
   text-align: center;
 `;
-export const Price = styled.p`
+
+export const Price = styled.button`
+  color: white;
   font-weight: 600;
   font-size: 18px;
   line-height: 100%;
   text-align: center;
+  background: none;
+  border: none;
+  cursor: pointer;
 `;

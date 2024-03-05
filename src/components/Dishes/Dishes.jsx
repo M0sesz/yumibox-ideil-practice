@@ -49,7 +49,7 @@ const setsData = [
 
 export const Dishes = () => {
   return (
-    <>
+    <div>
       <DishTitle>Найчастіше замовляють</DishTitle>
       <Swiper
         modules={[Navigation, Pagination]}
@@ -72,6 +72,6 @@ export const Dishes = () => {
         ))}
         <div className="pagination-wrap-dish"></div>
       </Swiper>
-    </>
+    </div>
   );
 };

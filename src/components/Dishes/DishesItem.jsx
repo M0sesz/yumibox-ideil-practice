@@ -12,13 +12,13 @@ import dish from "../../assets/dish.jpg";
 export const DishesItem = ({ title, grams, price }) => {
   return (
     <div>
-      <DishImg src={dish} alt="" />
+      <DishImg src={dish} alt="dish" />
       <DishTextWrap>
         <YumBoxText>
           {title} <br /> 21 сет
         </YumBoxText>
         <Grams>{grams}</Grams>
-        <Price>{price}</Price>
+        <Price type="button">{price}</Price>
       </DishTextWrap>
     </div>
   );
