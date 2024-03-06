@@ -54,10 +54,6 @@ export const Grams = styled.p`
   font-size: 15px;
   padding-bottom: 25px;
   text-align: center;
-
-  /* @media (min-width: 1100px) {
-    padding-bottom: 25px;
-  } */
 `;
 
 export const Price = styled.button`
@@ -114,10 +110,14 @@ export const DishDesktop = styled.div`
   }
 `;
 export const DishDesktopContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 70px;
-  justify-content: center;
-  padding-bottom: 50px;
-  place-items: center;
+  display: none;
+
+  @media (min-width: 1100px) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 70px;
+    justify-content: center;
+    padding-bottom: 50px;
+    place-items: center;
+  }
 `;
