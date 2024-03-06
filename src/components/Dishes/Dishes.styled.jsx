@@ -27,7 +27,7 @@ export const SwiperWrap = styled(Swiper)`
 export const DishImg = styled.img`
   width: 250px;
   margin: auto;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   @media (min-width: 1100px) {
     width: 230px;
   }
@@ -46,18 +46,18 @@ export const YumBoxText = styled.p`
   font-weight: 600;
   font-size: 24px;
   line-height: 100%;
-  padding-bottom: 15px;
+  padding-bottom: 20px;
 `;
 
 export const Grams = styled.p`
   color: grey;
   font-size: 15px;
-  padding-bottom: 15px;
+  padding-bottom: 25px;
   text-align: center;
 
-  @media (min-width: 1100px) {
-    padding-bottom: 20px;
-  }
+  /* @media (min-width: 1100px) {
+    padding-bottom: 25px;
+  } */
 `;
 
 export const Price = styled.button`
@@ -92,9 +92,13 @@ export const Price = styled.button`
     opacity: 0;
     transition: opacity 0.3s ease;
     padding: 20px 40px;
-    border: 1px solid white;
+    border: 2px solid white;
     border-radius: 63px;
     white-space: nowrap;
+
+    @media (max-width: 1100px) {
+      padding: 15px 30px;
+    }
   }
 
   /* початковий текст кнопки */
