@@ -3,7 +3,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
 import { DishesItem } from "./DishesItem";
-import { DishTitle } from "./Dishes.styled";
+import {
+  DishTitle,
+  DishDesktop,
+  SwiperWrap,
+  DishDesktopContainer,
+} from "./Dishes.styled";
+import { Wrapper } from "../Header/Header.styled";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -11,51 +17,54 @@ import "swiper/css/pagination";
 const setsData = [
   {
     id: 1,
-    title: "Yumbox ",
+    title: "Yumbox",
     grams: "1500 гр",
-    price: "799 грн",
   },
   {
     id: 2,
-    title: "Yumbox ",
+    title: "Yumbox",
     grams: "1500 гр",
-    price: "799 грн",
   },
   {
     id: 3,
-    title: "Yumbox ",
+    title: "Yumbox",
     grams: "1500 гр",
-    price: "799 грн",
   },
   {
     id: 4,
-    title: "Yumbox ",
+    title: "Yumbox",
     grams: "1500 гр",
-    price: "799 грн",
   },
   {
     id: 5,
-    title: "Yumbox ",
+    title: "Yumbox",
     grams: "1500 гр",
-    price: "799 грн",
   },
   {
     id: 6,
-    title: "Yumbox ",
+    title: "Yumbox",
     grams: "1500 гр",
-    price: "799 грн",
+  },
+  {
+    id: 7,
+    title: "Yumbox",
+    grams: "1500 гр",
+  },
+  {
+    id: 8,
+    title: "Yumbox",
+    grams: "1500 гр",
   },
 ];
 
 export const Dishes = () => {
   return (
-    <div>
+    <Wrapper>
       <DishTitle>Найчастіше замовляють</DishTitle>
-      <Swiper
+      <SwiperWrap
         modules={[Navigation, Pagination]}
         slidesPerView={1}
         spaceBetween={2}
-        loop={true}
         pagination={{
           el: ".pagination-wrap-dish",
         }}
@@ -71,7 +80,14 @@ export const Dishes = () => {
           </SwiperSlide>
         ))}
         <div className="pagination-wrap-dish"></div>
-      </Swiper>
-    </div>
+      </SwiperWrap>
+      <DishDesktopContainer>
+        {setsData.map((set) => (
+          <DishDesktop key={set.id}>
+            <DishesItem title={set.title} grams={set.grams} price={set.price} />
+          </DishDesktop>
+        ))}
+      </DishDesktopContainer>
+    </Wrapper>
   );
 };

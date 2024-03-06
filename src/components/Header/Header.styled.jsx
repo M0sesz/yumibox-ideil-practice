@@ -50,7 +50,7 @@ export const LogoHeader = styled.svg`
   width: 75px;
   height: auto;
 
-  @media (min-width: 1120px) {
+  @media (min-width: 1110px) {
     width: 114px;
   }
 `;
@@ -130,7 +130,7 @@ export const HeaderNavLink = styled.a`
   font-size: 24px;
   line-height: 39px;
 
-  @media (min-width: 1110px) {
+  @media (min-width: 1100px) {
     font-weight: 500;
   }
 `;
