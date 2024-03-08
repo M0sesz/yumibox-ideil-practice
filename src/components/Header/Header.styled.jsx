@@ -234,11 +234,14 @@ export const BasketDesk = styled.button`
 export const AmountBasket = styled.button`
   width: 19px;
   height: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
   background: red;
   cursor: pointer;
   border: 2px solid red;
   border-radius: 50%;
-  color: white;
-  align-items: center;
   margin-left: 5px;
+  color: white;
 `;

@@ -9,11 +9,11 @@ import {
 } from "./Dishes.styled";
 import dish from "../../assets/dish.jpg";
 
-export const DishesItem = ({ title, grams }) => {
+export const DishesItem = ({ title, grams, price }) => {
   const { addToBasket } = useBasket();
 
   const handleClick = () => {
-    addToBasket();
+    addToBasket(parseInt(price));
   };
 
   return (

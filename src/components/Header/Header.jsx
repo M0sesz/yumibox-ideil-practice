@@ -37,7 +37,7 @@ import { FaFacebookF } from "react-icons/fa";
 
 export const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { basketItems } = useBasket();
+  const { basketItems, totalPrice } = useBasket();
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -104,7 +104,7 @@ export const Header = () => {
         </HeaderDesktopNav>
         <HeaderBasketWrapperDesktop>
           <AmountBasket type="button">{basketItems}</AmountBasket>
-          <BasketDesk type="button"></BasketDesk>
+          <BasketDesk type="button">{totalPrice}&nbsp;грн</BasketDesk>
         </HeaderBasketWrapperDesktop>
       </HeaderWrapper>
       {isModalOpen && (
@@ -116,7 +116,7 @@ export const Header = () => {
             <div>
               <HeaderBasketWrapper>
                 <AmountBasket type="button">{basketItems}</AmountBasket>
-                <BasketDesk type="button">2 568грн</BasketDesk>
+                <BasketDesk type="button">{totalPrice}&nbsp;грн</BasketDesk>
               </HeaderBasketWrapper>
               <HeaderMobileNav>
                 <HeaderMobileNavUl>
