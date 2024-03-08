@@ -86,6 +86,7 @@ export const Modal = styled.div`
 `;
 
 export const ModalContent = styled.div`
+  width: auto;
   background-color: black;
   position: fixed;
   top: 0;
@@ -195,19 +196,20 @@ export const HeaderNavLinkDesktop = styled.a`
   }
 `;
 
-export const BasketDesk = styled.button`
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: white;
-  font-weight: 700;
-  font-size: 13px;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
 export const HeaderBasketWrapper = styled.div`
+  display: flex;
+  border: 2px solid white;
+  border-radius: 21px;
+  color: white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  width: 110px;
+  margin-bottom: 40px;
+  margin-top: 60px;
+`;
+
+export const HeaderBasketWrapperDesktop = styled.div`
+  display: flex;
   border: 2px solid white;
   border-radius: 21px;
   color: white;
@@ -217,4 +219,26 @@ export const HeaderBasketWrapper = styled.div`
   @media (max-width: 768px) {
     display: none;
   }
+`;
+
+export const BasketDesk = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 0 10px;
+`;
+
+export const AmountBasket = styled.button`
+  width: 19px;
+  height: 19px;
+  background: red;
+  cursor: pointer;
+  border: 2px solid red;
+  border-radius: 50%;
+  color: white;
+  align-items: center;
+  margin-left: 5px;
 `;

@@ -19,41 +19,49 @@ const setsData = [
     id: 1,
     title: "Yumbox",
     grams: "1500 гр",
+    price: "729",
   },
   {
     id: 2,
     title: "Yumbox",
     grams: "1500 гр",
+    price: "729",
   },
   {
     id: 3,
     title: "Yumbox",
     grams: "1500 гр",
+    price: "729",
   },
   {
     id: 4,
     title: "Yumbox",
     grams: "1500 гр",
+    price: "729",
   },
   {
     id: 5,
     title: "Yumbox",
     grams: "1500 гр",
+    price: "729",
   },
   {
     id: 6,
     title: "Yumbox",
     grams: "1500 гр",
+    price: "729",
   },
   {
     id: 7,
     title: "Yumbox",
     grams: "1500 гр",
+    price: "729",
   },
   {
     id: 8,
     title: "Yumbox",
     grams: "1500 гр",
+    price: "729",
   },
 ];
 

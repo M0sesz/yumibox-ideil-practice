@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
+import { useBasket } from "../Basket";
 import {
   TextMenu,
   Wrapper,
@@ -25,6 +25,8 @@ import {
   HeaderNavLinkDesktop,
   BasketDesk,
   HeaderBasketWrapper,
+  HeaderBasketWrapperDesktop,
+  AmountBasket,
 } from "./Header.styled";
 
 import { IoMdMenu } from "react-icons/io";
@@ -35,6 +37,7 @@ import { FaFacebookF } from "react-icons/fa";
 
 export const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { basketItems } = useBasket();
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -43,6 +46,14 @@ export const Header = () => {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isModalOpen]);
 
   return (
     <Wrapper>
@@ -91,9 +102,10 @@ export const Header = () => {
             </HeaderNavListDesktop>
           </HeaderDesktopNavUl>
         </HeaderDesktopNav>
-        <HeaderBasketWrapper>
-          <BasketDesk>2 568грн</BasketDesk>
-        </HeaderBasketWrapper>
+        <HeaderBasketWrapperDesktop>
+          <AmountBasket type="button">{basketItems}</AmountBasket>
+          <BasketDesk type="button"></BasketDesk>
+        </HeaderBasketWrapperDesktop>
       </HeaderWrapper>
       {isModalOpen && (
         <Modal>
@@ -102,6 +114,10 @@ export const Header = () => {
               <IoClose size="30px" color="white" />
             </CloseButton>
             <div>
+              <HeaderBasketWrapper>
+                <AmountBasket type="button">{basketItems}</AmountBasket>
+                <BasketDesk type="button">2 568грн</BasketDesk>
+              </HeaderBasketWrapper>
               <HeaderMobileNav>
                 <HeaderMobileNavUl>
                   <HeaderNavList>

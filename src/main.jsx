@@ -1,9 +1,13 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
+import ReactDOM from "react-dom";
+import { BasketProvider } from "../src/components/Basket";
+import App from "./App";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <BasketProvider>
+      <App />
+    </BasketProvider>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
