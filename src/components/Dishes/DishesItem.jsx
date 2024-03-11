@@ -9,13 +9,13 @@ import {
 } from "./Dishes.styled";
 import dish from "../../assets/dish.jpg";
 
-export const DishesItem = ({ title, grams, price }) => {
+export const DishesItem = ({ quantity, title, grams, price }) => {
   const { addToBasket } = useBasket();
 
   const handleClick = () => {
-    addToBasket(parseInt(price));
+    addToBasket(price, grams, title, quantity);
+    console.log(quantity, title, grams, price);
   };
-
   return (
     <div>
       <DishImg src={dish} alt="dish" />

@@ -19,49 +19,57 @@ const setsData = [
     id: 1,
     title: "Yumbox",
     grams: "1500 гр",
-    price: "729",
+    price: 729,
+    quantity: 1,
   },
   {
     id: 2,
     title: "Yumbox",
     grams: "1500 гр",
-    price: "729",
+    price: 729,
+    quantity: 1,
   },
   {
     id: 3,
     title: "Yumbox",
     grams: "1500 гр",
-    price: "729",
+    price: 729,
+    quantity: 1,
   },
   {
     id: 4,
     title: "Yumbox",
     grams: "1500 гр",
-    price: "729",
+    price: 729,
+    quantity: 1,
   },
   {
     id: 5,
     title: "Yumbox",
     grams: "1500 гр",
-    price: "729",
+    price: 729,
+    quantity: 1,
   },
   {
     id: 6,
     title: "Yumbox",
     grams: "1500 гр",
-    price: "729",
+    price: 729,
+    quantity: 1,
   },
   {
     id: 7,
     title: "Yumbox",
     grams: "1500 гр",
-    price: "729",
+    price: 729,
+    quantity: 1,
   },
   {
     id: 8,
     title: "Yumbox",
     grams: "1500 гр",
-    price: "729",
+    price: 729,
+    quantity: 1,
   },
 ];
 
@@ -84,7 +92,12 @@ export const Dishes = () => {
       >
         {setsData.map((set) => (
           <SwiperSlide key={set.id}>
-            <DishesItem title={set.title} grams={set.grams} price={set.price} />
+            <DishesItem
+              title={set.title}
+              grams={set.grams}
+              price={set.price}
+              quantity={set.quantity}
+            />
           </SwiperSlide>
         ))}
         <div className="pagination-wrap-dish"></div>
@@ -92,7 +105,12 @@ export const Dishes = () => {
       <DishDesktopContainer>
         {setsData.map((set) => (
           <DishDesktop key={set.id}>
-            <DishesItem title={set.title} grams={set.grams} price={set.price} />
+            <DishesItem
+              title={set.title}
+              grams={set.grams}
+              price={set.price}
+              quantity={set.quantity}
+            />
           </DishDesktop>
         ))}
       </DishDesktopContainer>

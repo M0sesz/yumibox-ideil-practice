@@ -27,6 +27,8 @@ import {
   HeaderBasketWrapper,
   HeaderBasketWrapperDesktop,
   AmountBasket,
+  ModalBasket,
+  ModalContentBasket,
 } from "./Header.styled";
 
 import { IoMdMenu } from "react-icons/io";
@@ -38,6 +40,8 @@ import { FaFacebookF } from "react-icons/fa";
 export const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { basketItems, totalPrice } = useBasket();
+  const [addedItem, setAddedItem] = useState(null);
+  const [isBasketModalOpen, setIsBasketModalOpen] = useState(false);
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -45,6 +49,18 @@ export const Header = () => {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
+  };
+
+  const handleOpenBasketModal = () => {
+    setIsBasketModalOpen(true);
+    if (basketItems.length > 0) {
+      setAddedItem(basketItems[basketItems.length - 1]);
+    }
+  };
+
+  const handleCloseBasketModal = () => {
+    setIsBasketModalOpen(false);
+    setAddedItem(null);
   };
 
   useEffect(() => {
@@ -81,7 +97,8 @@ export const Header = () => {
           />
         </LogoHeader>
         <MenuButton>
-          <TextMenu>Меню</TextMenu>
+          <TextMenu>{isBasketModalOpen ? "Кошик" : "Меню"}</TextMenu>
+
           <ButtonMenu onClick={handleOpenModal}>
             <IoMdMenu color="white" size="30px" />
           </ButtonMenu>
@@ -102,8 +119,8 @@ export const Header = () => {
             </HeaderNavListDesktop>
           </HeaderDesktopNavUl>
         </HeaderDesktopNav>
-        <HeaderBasketWrapperDesktop>
-          <AmountBasket type="button">{basketItems}</AmountBasket>
+        <HeaderBasketWrapperDesktop onClick={handleOpenBasketModal}>
+          <AmountBasket type="button">{basketItems.length}</AmountBasket>
           <BasketDesk type="button">{totalPrice}&nbsp;грн</BasketDesk>
         </HeaderBasketWrapperDesktop>
       </HeaderWrapper>
@@ -114,8 +131,8 @@ export const Header = () => {
               <IoClose size="30px" color="white" />
             </CloseButton>
             <div>
-              <HeaderBasketWrapper>
-                <AmountBasket type="button">{basketItems}</AmountBasket>
+              <HeaderBasketWrapper onClick={handleOpenBasketModal}>
+                <AmountBasket type="button">{basketItems.length}</AmountBasket>
                 <BasketDesk type="button">{totalPrice}&nbsp;грн</BasketDesk>
               </HeaderBasketWrapper>
               <HeaderMobileNav>
@@ -134,7 +151,6 @@ export const Header = () => {
                   </HeaderNavList>
                 </HeaderMobileNavUl>
               </HeaderMobileNav>
-
               <UlAddress>
                 <address>
                   <ListAddress>
@@ -162,6 +178,26 @@ export const Header = () => {
               </ListSocial>
             </div>
           </ModalContent>
+          {isBasketModalOpen && (
+            <ModalBasket>
+              <ModalContentBasket>
+                <CloseButton onClick={handleCloseBasketModal}>
+                  <IoClose size="30px" color="white" />
+                </CloseButton>
+                {addedItem ? (
+                  <div>
+                    <p>{addedItem.title}</p>
+                    <p>{addedItem.grams}</p>
+                    <p>{addedItem.price}₴</p>
+                    <p>{addedItem.quantity}</p>
+                    <p>{totalPrice} ₴</p>
+                  </div>
+                ) : (
+                  <p>Ви поки не зробили ніякого замовлення</p>
+                )}
+              </ModalContentBasket>
+            </ModalBasket>
+          )}
         </Modal>
       )}
     </Wrapper>
