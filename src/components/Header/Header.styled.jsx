@@ -284,6 +284,7 @@ export const BasketDish = styled.div`
   border-radius: 12px;
   margin-bottom: 10px;
   padding: 18px 16px 14px 18px;
+  overflow: auto;
 `;
 
 export const DishBasketImg = styled.div`
@@ -332,4 +333,51 @@ export const PlusButton = styled.button`
   margin-left: 7px;
   font-weight: 600;
   font-size: 15px;
+`;
+
+export const DeliveryInfo = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  text-align: center;
+  border-radius: 31px 31px 0px 0px;
+  background: rgb(34, 34, 34);
+  width: 500px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-weight: 600;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  p:nth-child(1) {
+    font-size: 18px;
+  }
+
+  p:nth-child(2) {
+    font-size: 26px;
+  }
+`;
+
+export const DeliveryButton = styled.button`
+  border-radius: 63px;
+  background: rgb(252, 184, 82);
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+  padding: 24px 114px;
+  line-height: 100%;
+  margin-top: 20px;
 `;

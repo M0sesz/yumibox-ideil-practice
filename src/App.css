@@ -111,3 +111,12 @@ img {
   display: flex;
   justify-content: center;
 }
+
+div::-webkit-scrollbar {
+  width: 4px;
+}
+
+div::-webkit-scrollbar-thumb {
+  background-color: #fcb852;
+  border-radius: 5px;
+}
