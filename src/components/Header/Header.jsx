@@ -29,6 +29,7 @@ import {
   AmountBasket,
   ModalBasket,
   ModalContentBasket,
+  BasketDish,
 } from "./Header.styled";
 
 import { IoMdMenu } from "react-icons/io";
@@ -36,6 +37,7 @@ import { IoClose } from "react-icons/io5";
 import { ImLinkedin2 } from "react-icons/im";
 import { FaInstagram } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
+import basketdish from "../../assets/basketdish.png";
 
 export const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -184,14 +186,24 @@ export const Header = () => {
                 <CloseButton onClick={handleCloseBasketModal}>
                   <IoClose size="30px" color="white" />
                 </CloseButton>
-                {addedItem ? (
-                  <div>
-                    <p>{addedItem.title}</p>
-                    <p>{addedItem.grams}</p>
-                    <p>{addedItem.price}₴</p>
-                    <p>{addedItem.quantity}</p>
-                    <p>{totalPrice} ₴</p>
-                  </div>
+                {basketItems.length > 0 ? (
+                  basketItems.map((item, index) => (
+                    <div key={index}>
+                      <BasketDish>
+                        <div>
+                          <img src={basketdish} alt="basket dish" />
+                        </div>
+                        <p>{item.title}</p>
+                        <p>{item.grams}</p>
+                        <p>{item.price}₴</p>
+                        <p>{item.quantity}</p>
+                      </BasketDish>
+                      {/* <div>
+                        <p>Доставка 50 ₴</p>
+                        <p>{totalPrice} ₴</p>
+                      </div> */}
+                    </div>
+                  ))
                 ) : (
                   <p>Ви поки не зробили ніякого замовлення</p>
                 )}

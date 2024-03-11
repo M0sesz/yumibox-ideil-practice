@@ -110,6 +110,7 @@ export const ModalContent = styled.div`
   padding-left: 50px;
   align-items: center;
 `;
+
 export const ModalContentBasket = styled.div`
   width: auto;
   background-color: black;
@@ -119,8 +120,13 @@ export const ModalContentBasket = styled.div`
   right: 0;
   bottom: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding-left: 30px;
+  padding-right: 30px;
 `;
+
 export const CloseButton = styled.button`
   padding-top: 18px;
   position: absolute;
@@ -267,4 +273,12 @@ export const AmountBasket = styled.button`
   border-radius: 50%;
   margin-left: 5px;
   color: white;
+`;
+
+export const BasketDish = styled.div`
+  background-color: rgb(34, 34, 34);
+  width: 411px;
+  height: 151px;
+  border-radius: 12px;
+  margin-bottom: 10px;
 `;
