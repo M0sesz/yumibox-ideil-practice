@@ -31,7 +31,12 @@ a {
   color: currentColor;
   text-decoration: none;
 }
-
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
 img {
   display: block;
   max-width: 100%;

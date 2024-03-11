@@ -15,7 +15,9 @@ export const BasketProvider = ({ children }) => {
   };
 
   return (
-    <BasketContext.Provider value={{ basketItems, totalPrice, addToBasket }}>
+    <BasketContext.Provider
+      value={{ basketItems, totalPrice, addToBasket, setTotalPrice }}
+    >
       {children}
     </BasketContext.Provider>
   );

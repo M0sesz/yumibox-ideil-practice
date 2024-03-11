@@ -122,7 +122,8 @@ export const ModalContentBasket = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 100px;
   padding-left: 30px;
   padding-right: 30px;
 `;
@@ -257,6 +258,7 @@ export const BasketDesk = styled.button`
   color: white;
   font-weight: 700;
   font-size: 13px;
+
   padding: 0 10px;
 `;
 
@@ -281,4 +283,53 @@ export const BasketDish = styled.div`
   height: 151px;
   border-radius: 12px;
   margin-bottom: 10px;
+  padding: 18px 16px 14px 18px;
+`;
+
+export const DishBasketImg = styled.div`
+  background: rgb(48, 48, 48);
+  width: 44px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4.26px;
+`;
+
+export const DeleteDish = styled.button``;
+
+export const BasketPrice = styled.p`
+  font-weight: 600;
+  font-size: 26px;
+`;
+export const DownContentDish = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+`;
+export const AmountBasketDish = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 22.8px;
+  padding: 10px 11px 8px 11px;
+`;
+
+export const Quantity = styled.p`
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 100%;
+`;
+
+export const MinusButton = styled.button`
+  margin-right: 7px;
+  font-weight: 600;
+  font-size: 15px;
+`;
+export const PlusButton = styled.button`
+  margin-left: 7px;
+  font-weight: 600;
+  font-size: 15px;
 `;
