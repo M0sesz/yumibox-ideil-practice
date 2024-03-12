@@ -14,9 +14,24 @@ export const BasketProvider = ({ children }) => {
     setTotalPrice((prevTotal) => prevTotal + parseFloat(price) * quantity);
   };
 
+  const removeItemFromBasket = (index) => {
+    const updatedBasketItems = [...basketItems];
+    const removedItem = updatedBasketItems.splice(index, 1)[0];
+    const removedItemTotalPrice =
+      parseFloat(removedItem.price) * removedItem.quantity;
+    setBasketItems(updatedBasketItems);
+    setTotalPrice((prevTotal) => prevTotal - removedItemTotalPrice);
+  };
+
   return (
     <BasketContext.Provider
-      value={{ basketItems, totalPrice, addToBasket, setTotalPrice }}
+      value={{
+        basketItems,
+        totalPrice,
+        addToBasket,
+        removeItemFromBasket,
+        setTotalPrice,
+      }}
     >
       {children}
     </BasketContext.Provider>

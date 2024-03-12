@@ -14,8 +14,8 @@ export const DishesItem = ({ quantity, title, grams, price }) => {
 
   const handleClick = () => {
     addToBasket(price, grams, title, quantity);
-    console.log(quantity, title, grams, price);
   };
+
   return (
     <div>
       <DishImg src={dish} alt="dish" />

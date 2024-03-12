@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useBasket } from "../Basket";
 import {
+  BasketButtonsWrap,
   TextMenu,
   Wrapper,
   ButtonMenu,
@@ -54,7 +55,8 @@ import { FaFacebookF } from "react-icons/fa";
 import basketdish from "../../assets/basketdish.png";
 
 export const Header = () => {
-  const { basketItems, totalPrice, setTotalPrice } = useBasket();
+  const { basketItems, totalPrice, setTotalPrice, removeItemFromBasket } =
+    useBasket();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [addedItem, setAddedItem] = useState(null);
   const [isBasketModalOpen, setIsBasketModalOpen] = useState(false);
@@ -73,7 +75,6 @@ export const Header = () => {
     if (basketItems.length > 0) {
       setAddedItem(basketItems[basketItems.length - 1]);
     }
-    console.log("12");
   };
 
   const handleCloseBasketModal = () => {
@@ -181,17 +182,16 @@ export const Header = () => {
           </HeaderDesktopNavUl>
         </HeaderDesktopNav>
         <HeaderBasketWrapperDesktop onClick={handleOpenBasketModal}>
-          <AmountBasket type="button">{basketItems.length}</AmountBasket>
-          <BasketDesk type="button">{totalPrice}&nbsp;грн</BasketDesk>
+          <BasketButtonsWrap>
+            <AmountBasket type="button">{basketItems.length}</AmountBasket>
+            <BasketDesk type="button">{totalPrice}&nbsp;грн</BasketDesk>
+          </BasketButtonsWrap>
           {isBasketModalOpen && (
             <ModalBasket>
               <ModalContentBasket>
                 <HeaderBasketClose>
                   <h2>Корзина</h2>
-                  <button
-                    onTouchStart={handleCloseBasketModal}
-                    onTouchEnd={handleCloseModal}
-                  >
+                  <button onMouseDown={handleCloseBasketModal}>
                     <IoClose size="30px" color="white" />
                   </button>
                 </HeaderBasketClose>
@@ -205,7 +205,10 @@ export const Header = () => {
                           </DishBasketImg>
                           <TitleWrapBasket>
                             <BasketTitle>{item.title} 21 сет</BasketTitle>
-                            <DeleteDish type="button">
+                            <DeleteDish
+                              type="button"
+                              onClick={() => removeItemFromBasket(index)}
+                            >
                               <svg
                                 width="16.000000"
                                 height="18.000000"

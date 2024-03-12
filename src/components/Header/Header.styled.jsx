@@ -246,16 +246,20 @@ export const HeaderBasketWrapper = styled.div`
 `;
 
 export const HeaderBasketWrapperDesktop = styled.div`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const BasketButtonsWrap = styled.div`
   display: flex;
   border: 2px solid white;
   border-radius: 21px;
   color: white;
   padding-top: 4px;
   padding-bottom: 4px;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
+  position: relative;
+  z-index: 17;
 `;
 
 export const BasketDesk = styled.button`
@@ -290,7 +294,7 @@ export const BasketDish = styled.div`
   height: 151px;
   border-radius: 12px;
   margin-bottom: 10px;
-  padding: 18px 16px 14px 18px;
+  padding: 18px 16px 1px 18px;
 
   @media (max-width: 768px) {
     max-width: 420px;
@@ -325,7 +329,7 @@ export const AmountBasketDish = styled.div`
   align-items: center;
   border: 1px solid rgb(255, 255, 255);
   border-radius: 22.8px;
-  padding: 10px 11px 8px 11px;
+  padding: 8px 16px 7px 16px;
 `;
 
 export const Quantity = styled.p`
@@ -335,12 +339,12 @@ export const Quantity = styled.p`
 `;
 
 export const MinusButton = styled.button`
-  margin-right: 7px;
+  margin-right: 13px;
   font-weight: 600;
   font-size: 15px;
 `;
 export const PlusButton = styled.button`
-  margin-left: 7px;
+  margin-left: 13px;
   font-weight: 600;
   font-size: 15px;
 `;
