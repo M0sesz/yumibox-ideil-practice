@@ -8,8 +8,8 @@ export const BasketProvider = ({ children }) => {
   const [basketItems, setBasketItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
 
-  const addToBasket = (price, grams, title, quantity) => {
-    const newItem = { price, grams, title, quantity };
+  const addToBasket = (id, price, grams, title, quantity) => {
+    const newItem = { id, price, grams, title, quantity };
     setBasketItems((prevItems) => [...prevItems, newItem]);
     setTotalPrice((prevTotal) => prevTotal + parseFloat(price) * quantity);
   };

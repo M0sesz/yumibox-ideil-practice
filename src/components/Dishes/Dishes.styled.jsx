@@ -105,6 +105,7 @@ export const Price = styled.button`
 
 export const DishDesktop = styled.div`
   display: none;
+  height: 400px;
   @media (min-width: 1100px) {
     display: flex;
   }
@@ -119,5 +120,21 @@ export const DishDesktopContainer = styled.div`
     justify-content: center;
     padding-bottom: 50px;
     place-items: center;
+  }
+`;
+
+export const ItemInBasket = styled.p`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 15px 30px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 63px;
+
+  svg {
+    margin-right: 5px;
+  }
+  span {
+    font-weight: 600;
   }
 `;

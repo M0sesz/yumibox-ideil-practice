@@ -93,6 +93,7 @@ export const Dishes = () => {
         {setsData.map((set) => (
           <SwiperSlide key={set.id}>
             <DishesItem
+              id={set.id}
               title={set.title}
               grams={set.grams}
               price={set.price}
@@ -106,6 +107,7 @@ export const Dishes = () => {
         {setsData.map((set) => (
           <DishDesktop key={set.id}>
             <DishesItem
+              id={set.id}
               title={set.title}
               grams={set.grams}
               price={set.price}

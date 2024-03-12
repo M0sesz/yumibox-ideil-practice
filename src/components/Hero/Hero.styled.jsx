@@ -73,15 +73,25 @@ export const HeroImage = styled.img`
   height: 250px;
 
   @media (min-width: 1100px) {
-    top: 30px;
-    width: 700px;
-    height: 500px;
+    top: 10px;
+    width: 800px;
+    height: 600px;
   }
 `;
 export const YumBoxImg = styled.img`
+  width: 1600px;
+  height: 500px;
   display: none;
 
   @media (min-width: 1100px) {
     display: block;
+  }
+`;
+export const YumBoxImg2 = styled.img`
+  position: fixed;
+  top: 0;
+  left: 170px;
+  @media (max-width: 1100px) {
+    display: none;
   }
 `;
