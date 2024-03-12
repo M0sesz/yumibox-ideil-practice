@@ -45,6 +45,9 @@ import {
   Gram,
   HeaderBasketClose,
   NullBasket,
+  BasketButtonsWrapDown,
+  Line,
+  Quantity,
 } from "./Header.styled";
 
 import { IoMdMenu } from "react-icons/io";
@@ -53,6 +56,7 @@ import { ImLinkedin2 } from "react-icons/im";
 import { FaInstagram } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import basketdish from "../../assets/basketdish.png";
+import sad from "../../assets/sad.png";
 
 export const Header = () => {
   const { basketItems, totalPrice, setTotalPrice, removeItemFromBasket } =
@@ -250,7 +254,6 @@ export const Header = () => {
                                 xmlns="http://www.w3.org/2000/svg"
                                 xmlnsXlink="http://www.w3.org/1999/xlink"
                               >
-                                <desc>Created with Pixso.</desc>
                                 <defs />
                                 <path
                                   id="Vector"
@@ -263,6 +266,7 @@ export const Header = () => {
                             </DeleteDish>
                           </TitleWrapBasket>
                           <Gram>{item.grams}</Gram>
+                          <Line />
                           <DownContentDish>
                             <BasketPrice>
                               {item.price *
@@ -276,10 +280,10 @@ export const Header = () => {
                               >
                                 -
                               </MinusButton>
-                              <p>
+                              <Quantity>
                                 {itemQuantities[index] ||
                                   basketItems[index].quantity}
-                              </p>
+                              </Quantity>
                               <PlusButton
                                 onClick={() => handlePlusButtonClick(index)}
                               >
@@ -293,6 +297,7 @@ export const Header = () => {
                   ) : (
                     <NullBasket>
                       Ви поки не зробили ніякого замовлення
+                      <img src={sad} alt="" width={100} />
                     </NullBasket>
                   )}
                   {basketItems.length > 0 && (
@@ -302,7 +307,7 @@ export const Header = () => {
                         <p>50 ₴</p>
                       </div>
                       <DeliveryButton
-                        type="button"
+                        type="submit"
                         onClick={() =>
                           handleOrder(
                             parseInt(
@@ -417,6 +422,7 @@ export const Header = () => {
                             </DeleteDish>
                           </TitleWrapBasket>
                           <Gram>{item.grams}</Gram>
+                          <Line />
                           <DownContentDish>
                             <BasketPrice>
                               {item.price *
@@ -430,10 +436,10 @@ export const Header = () => {
                               >
                                 -
                               </MinusButton>
-                              <p>
+                              <Quantity>
                                 {itemQuantities[index] ||
                                   basketItems[index].quantity}
-                              </p>
+                              </Quantity>
                               <PlusButton
                                 onClick={() => handlePlusButtonClick(index)}
                               >
@@ -447,6 +453,7 @@ export const Header = () => {
                   ) : (
                     <NullBasket>
                       Ви поки не зробили ніякого замовлення
+                      <img src={sad} alt="" width={100} />
                     </NullBasket>
                   )}
                   {basketItems.length > 0 && (
@@ -456,7 +463,7 @@ export const Header = () => {
                         <p>50 ₴</p>
                       </div>
                       <DeliveryButton
-                        type="button"
+                        type="submit"
                         onClick={() =>
                           handleOrder(
                             parseInt(
@@ -476,6 +483,10 @@ export const Header = () => {
           )}
         </Modal>
       )}
+      <BasketButtonsWrapDown onClick={handleOpenBasketModal}>
+        <AmountBasket type="button">{basketItems.length}</AmountBasket>
+        <BasketDesk type="button">{discountedPrice.toFixed(0)} грн</BasketDesk>
+      </BasketButtonsWrapDown>
     </Wrapper>
   );
 };

@@ -291,7 +291,7 @@ export const BasketDish = styled.div`
   background-color: rgb(34, 34, 34);
   max-width: 411px;
   width: 90vw;
-  height: 151px;
+  height: 180px;
   border-radius: 12px;
   margin-bottom: 10px;
   padding: 18px 16px 1px 18px;
@@ -333,7 +333,7 @@ export const AmountBasketDish = styled.div`
 `;
 
 export const Quantity = styled.p`
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 100%;
 `;
@@ -341,12 +341,12 @@ export const Quantity = styled.p`
 export const MinusButton = styled.button`
   margin-right: 13px;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 20px;
 `;
 export const PlusButton = styled.button`
   margin-left: 13px;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 20px;
 `;
 
 export const DeliveryInfo = styled.div`
@@ -432,5 +432,34 @@ export const HeaderBasketClose = styled.div`
 `;
 
 export const NullBasket = styled.p`
-  margin-top: 40px;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 700;
+
+  img {
+    margin-top: 50px;
+  }
+`;
+export const BasketButtonsWrapDown = styled.div`
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  display: flex;
+  border: 2px solid white;
+  border-radius: 21px;
+  color: white;
+  padding: 4px 8px 4px 2px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+export const Line = styled.hr`
+  width: calc(100% + 44px);
+  margin: 0 -30px 30px -30px;
+  border: 1px solid black;
+  overflow-x: hidden;
 `;
