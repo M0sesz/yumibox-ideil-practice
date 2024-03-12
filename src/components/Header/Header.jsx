@@ -61,6 +61,7 @@ export const Header = () => {
   const [addedItem, setAddedItem] = useState(null);
   const [isBasketModalOpen, setIsBasketModalOpen] = useState(false);
   const [itemQuantities, setItemQuantities] = useState(1);
+  const [discountedPrice, setDiscountedPrice] = useState(0);
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -100,14 +101,6 @@ export const Header = () => {
     recalculateTotalPrice(index, newQuantity);
   };
 
-  useEffect(() => {
-    const initialQuantities = {};
-    basketItems.forEach((item, index) => {
-      initialQuantities[index] = item.quantity;
-    });
-    setItemQuantities(initialQuantities);
-  }, [basketItems]);
-
   const recalculateTotalPrice = (index, newQuantity) => {
     const newBasketItems = [...basketItems];
     newBasketItems[index].quantity = newQuantity;
@@ -117,6 +110,30 @@ export const Header = () => {
     });
     setTotalPrice(newTotalPrice);
   };
+
+  const calculateTotalPriceWithDiscount = (price) => {
+    if (price > 1000) {
+      return price * 0.9;
+    }
+    return price;
+  };
+
+  const handleOrder = () => {
+    console.log(basketItems);
+  };
+
+  useEffect(() => {
+    const initialQuantities = {};
+    basketItems.forEach((item, index) => {
+      initialQuantities[index] = item.quantity;
+    });
+    setItemQuantities(initialQuantities);
+  }, [basketItems]);
+
+  useEffect(() => {
+    const newTotalPrice = calculateTotalPriceWithDiscount(totalPrice);
+    setDiscountedPrice(newTotalPrice);
+  }, [totalPrice]);
 
   useEffect(() => {
     let newTotalPrice = 0;
@@ -133,6 +150,20 @@ export const Header = () => {
       document.body.style.overflow = "auto";
     }
   }, [isModalOpen, isBasketModalOpen]);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        handleCloseBasketModal();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   return (
     <Wrapper>
@@ -184,7 +215,9 @@ export const Header = () => {
         <HeaderBasketWrapperDesktop onClick={handleOpenBasketModal}>
           <BasketButtonsWrap>
             <AmountBasket type="button">{basketItems.length}</AmountBasket>
-            <BasketDesk type="button">{totalPrice}&nbsp;грн</BasketDesk>
+            <BasketDesk type="button">
+              {discountedPrice.toFixed(0)} грн
+            </BasketDesk>
           </BasketButtonsWrap>
           {isBasketModalOpen && (
             <ModalBasket>
@@ -268,8 +301,18 @@ export const Header = () => {
                         <p>Доставка </p>
                         <p>50 ₴</p>
                       </div>
-                      <DeliveryButton type="button">
-                        Оформити за {totalPrice} ₴
+                      <DeliveryButton
+                        type="button"
+                        onClick={() =>
+                          handleOrder(
+                            parseInt(
+                              calculateTotalPriceWithDiscount(totalPrice)
+                            )
+                          )
+                        }
+                      >
+                        Оформити за{" "}
+                        {parseInt(calculateTotalPriceWithDiscount(totalPrice))}₴
                       </DeliveryButton>
                     </DeliveryInfo>
                   )}
@@ -349,7 +392,10 @@ export const Header = () => {
                           </DishBasketImg>
                           <TitleWrapBasket>
                             <BasketTitle>{item.title} 21 сет</BasketTitle>
-                            <DeleteDish type="button">
+                            <DeleteDish
+                              type="button"
+                              onClick={() => removeItemFromBasket(index)}
+                            >
                               <svg
                                 width="16.000000"
                                 height="18.000000"
@@ -399,7 +445,9 @@ export const Header = () => {
                       </div>
                     ))
                   ) : (
-                    <p>Ви поки не зробили ніякого замовлення</p>
+                    <NullBasket>
+                      Ви поки не зробили ніякого замовлення
+                    </NullBasket>
                   )}
                   {basketItems.length > 0 && (
                     <DeliveryInfo>
@@ -407,8 +455,18 @@ export const Header = () => {
                         <p>Доставка </p>
                         <p>50 ₴</p>
                       </div>
-                      <DeliveryButton type="button">
-                        Оформити за {totalPrice} ₴
+                      <DeliveryButton
+                        type="button"
+                        onClick={() =>
+                          handleOrder(
+                            parseInt(
+                              calculateTotalPriceWithDiscount(totalPrice)
+                            )
+                          )
+                        }
+                      >
+                        Оформити за{" "}
+                        {parseInt(calculateTotalPriceWithDiscount(totalPrice))}₴
                       </DeliveryButton>
                     </DeliveryInfo>
                   )}
