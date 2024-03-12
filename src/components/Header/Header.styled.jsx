@@ -80,6 +80,7 @@ export const Modal = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 10;
+
   @media (min-width: 768px) {
     display: none;
   }
@@ -109,10 +110,11 @@ export const ModalContent = styled.div`
   display: flex;
   padding-left: 50px;
   align-items: center;
+  @media (min-width: 1100px) {
+  }
 `;
 
 export const ModalContentBasket = styled.div`
-  width: auto;
   background-color: black;
   position: fixed;
   top: 0;
@@ -126,6 +128,11 @@ export const ModalContentBasket = styled.div`
   padding-top: 100px;
   padding-left: 30px;
   padding-right: 30px;
+
+  @media (min-width: 769px) {
+    width: 450px;
+    left: auto;
+  }
 `;
 
 export const CloseButton = styled.button`
@@ -258,7 +265,6 @@ export const BasketDesk = styled.button`
   color: white;
   font-weight: 700;
   font-size: 13px;
-
   padding: 0 10px;
 `;
 
@@ -279,12 +285,16 @@ export const AmountBasket = styled.button`
 
 export const BasketDish = styled.div`
   background-color: rgb(34, 34, 34);
-  width: 411px;
+  max-width: 411px;
+  width: 90vw;
   height: 151px;
   border-radius: 12px;
   margin-bottom: 10px;
   padding: 18px 16px 14px 18px;
-  overflow: auto;
+
+  @media (max-width: 768px) {
+    max-width: 420px;
+  }
 `;
 
 export const DishBasketImg = styled.div`
@@ -343,13 +353,19 @@ export const DeliveryInfo = styled.div`
   text-align: center;
   border-radius: 31px 31px 0px 0px;
   background: rgb(34, 34, 34);
-  width: 500px;
+  width: 94.5vw;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   font-weight: 600;
+
+  @media (min-width: 768px) {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 93%;
+  }
 
   div {
     display: flex;
@@ -380,4 +396,37 @@ export const DeliveryButton = styled.button`
   padding: 24px 114px;
   line-height: 100%;
   margin-top: 20px;
+`;
+
+export const BasketTitle = styled.p`
+  font-size: 18px;
+  font-weight: 600;
+`;
+
+export const TitleWrapBasket = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 60px;
+  margin-top: -40px;
+`;
+export const Gram = styled.p`
+  color: grey;
+  font-size: 13px;
+  font-weight: 450;
+  margin-left: 60px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+`;
+
+export const HeaderBasketClose = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+`;
+
+export const NullBasket = styled.p`
+  margin-top: 40px;
 `;
