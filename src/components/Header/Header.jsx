@@ -45,7 +45,6 @@ import {
   Gram,
   HeaderBasketClose,
   NullBasket,
-  BasketButtonsWrapDown,
   Line,
   Quantity,
 } from "./Header.styled";
@@ -77,6 +76,7 @@ export const Header = () => {
 
   const handleOpenBasketModal = () => {
     setIsBasketModalOpen(true);
+
     if (basketItems.length > 0) {
       setAddedItem(basketItems[basketItems.length - 1]);
     }
@@ -232,7 +232,7 @@ export const Header = () => {
                     <IoClose size="30px" color="white" />
                   </button>
                 </HeaderBasketClose>
-                <div style={{ maxHeight: "700px", overflowY: "auto" }}>
+                <div style={{ maxHeight: "600px", overflowY: "auto" }}>
                   {basketItems.length > 0 ? (
                     basketItems.map((item, index) => (
                       <div key={index}>
@@ -453,7 +453,7 @@ export const Header = () => {
                   ) : (
                     <NullBasket>
                       Ви поки не зробили ніякого замовлення
-                      <img src={sad} alt="" width={100} />
+                      <img src={sad} alt="sad pizza" width={100} />
                     </NullBasket>
                   )}
                   {basketItems.length > 0 && (
@@ -483,10 +483,6 @@ export const Header = () => {
           )}
         </Modal>
       )}
-      <BasketButtonsWrapDown onClick={handleOpenBasketModal}>
-        <AmountBasket type="button">{basketItems.length}</AmountBasket>
-        <BasketDesk type="button">{discountedPrice.toFixed(0)} грн</BasketDesk>
-      </BasketButtonsWrapDown>
     </Wrapper>
   );
 };

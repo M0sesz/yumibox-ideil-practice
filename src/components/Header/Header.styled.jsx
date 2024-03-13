@@ -323,6 +323,7 @@ export const DownContentDish = styled.div`
   align-items: center;
   text-align: center;
 `;
+
 export const AmountBasketDish = styled.div`
   display: flex;
   justify-content: center;
@@ -345,6 +346,7 @@ export const MinusButton = styled.button`
 `;
 export const PlusButton = styled.button`
   margin-left: 13px;
+
   font-weight: 600;
   font-size: 20px;
 `;
@@ -440,20 +442,6 @@ export const NullBasket = styled.p`
 
   img {
     margin-top: 50px;
-  }
-`;
-export const BasketButtonsWrapDown = styled.div`
-  position: fixed;
-  bottom: 20px;
-  right: 10px;
-  display: flex;
-  border: 2px solid white;
-  border-radius: 21px;
-  color: white;
-  padding: 4px 8px 4px 2px;
-
-  @media (min-width: 768px) {
-    display: none;
   }
 `;
 
